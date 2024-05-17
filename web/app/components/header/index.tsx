@@ -69,7 +69,7 @@ const Header = () => {
       )}
       {!isMobile && (
         <div className='flex items-center'>
-          <ExploreNav className={navClassName} />
+          {/* <ExploreNav className={navClassName} /> */}
           <AppNav />
           {isCurrentWorkspaceManager && <DatasetNav />}
           <ToolsNav className={navClassName} />
@@ -96,7 +96,7 @@ const Header = () => {
       </div>
       {(isMobile && isShowNavMenu) && (
         <div className='w-full flex flex-col p-2 gap-y-1'>
-          <ExploreNav className={navClassName} />
+          {/* <ExploreNav className={navClassName} /> */}
           <AppNav />
           {isCurrentWorkspaceManager && <DatasetNav />}
           <ToolsNav className={navClassName} />
