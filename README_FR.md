@@ -69,13 +69,13 @@ Dify est une plateforme de développement d'applications LLM open source. Son in
 **5. Capac
 
 ités d'agent**: 
-  Vous pouvez définir des agents basés sur l'appel de fonction LLM ou ReAct, et ajouter des outils pré-construits ou personnalisés pour l'agent. Dify fournit plus de 50 outils intégrés pour les agents d'IA, tels que la recherche Google, DELL·E, Stable Diffusion et WolframAlpha.
+  Vous pouvez définir des agents basés sur l'appel de fonction LLM ou ReAct, et ajouter des outils pré-construits ou personnalisés pour l'agent.SuperBotfournit plus de 50 outils intégrés pour les agents d'IA, tels que la recherche Google, DELL·E, Stable Diffusion et WolframAlpha.
 
 **6. LLMOps**: 
   Surveillez et analysez les journaux d'application et les performances au fil du temps. Vous pouvez continuellement améliorer les prompts, les ensembles de données et les modèles en fonction des données de production et des annotations.
 
 **7. Backend-as-a-Service**: 
-  Toutes les offres de Dify sont accompagnées d'API correspondantes, vous permettant d'intégrer facilement Dify dans votre propre logique métier.
+  Toutes les offres deSuperBotsont accompagnées d'API correspondantes, vous permettant d'intégrer facilementSuperBotdans votre propre logique métier.
 
 
 ## Comparaison des fonctionnalités
@@ -150,8 +150,8 @@ ités d'agent**:
 - **Cloud </br>**
 Nous hébergeons un service [Dify Cloud](https://dify.ai) pour que tout le monde puisse l'essayer sans aucune configuration. Il fournit toutes les capacités de la version auto-hébergée et comprend 200 appels GPT-4 gratuits dans le plan bac à sable.
 
-- **Auto-hébergement Dify Community Edition</br>**
-Lancez rapidement Dify dans votre environnement avec ce [guide de démarrage](#quick-start).
+- **Auto-hébergementSuperBotCommunity Edition</br>**
+Lancez rapidementSuperBotdans votre environnement avec ce [guide de démarrage](#quick-start).
 Utilisez notre [documentation](https://docs.dify.ai) pour plus de références et des instructions plus détaillées.
 
 - **Dify pour les entreprises / organisations</br>**
@@ -161,7 +161,7 @@ Nous proposons des fonctionnalités supplémentaires adaptées aux entreprises. 
 
 ## Rester en avance
 
-Mettez une étoile à Dify sur GitHub et soyez instantanément informé des nouvelles versions.
+Mettez une étoile àSuperBotsur GitHub et soyez instantanément informé des nouvelles versions.
 
 ![star-us](https://github.com/langgenius/dify/assets/13230914/b823edc1-6388-4e25-ad45-2f6b187adbb4)
 
@@ -175,16 +175,16 @@ Mettez une étoile à Dify sur GitHub et soyez instantanément informé des nouv
 
 </br>
 
-La manière la plus simple de démarrer le serveur Dify est d'exécuter notre fichier [docker-compose.yml](docker/docker-compose.yaml). Avant d'exécuter la commande d'installation, assurez-vous que [Docker](https://docs.docker.com/get-docker/) et [Docker Compose](https://docs.docker.com/compose/install/) sont installés sur votre machine:
+La manière la plus simple de démarrer le serveurSuperBotest d'exécuter notre fichier [docker-compose.yml](docker/docker-compose.yaml). Avant d'exécuter la commande d'installation, assurez-vous que [Docker](https://docs.docker.com/get-docker/) et [Docker Compose](https://docs.docker.com/compose/install/) sont installés sur votre machine:
 
 ```bash
 cd docker
 docker compose up -d
 ```
 
-Après l'exécution, vous pouvez accéder au tableau de bord Dify dans votre navigateur à [http://localhost/install](http://localhost/install) et commencer le processus d'initialisation.
+Après l'exécution, vous pouvez accéder au tableau de bordSuperBotdans votre navigateur à [http://localhost/install](http://localhost/install) et commencer le processus d'initialisation.
 
-> Si vous souhaitez contribuer à Dify ou effectuer un développement supplémentaire, consultez notre [guide de déploiement à partir du code source](https://docs.dify.ai/getting-started/install-self-hosted/local-source-code)
+> Si vous souhaitez contribuer àSuperBotou effectuer un développement supplémentaire, consultez notre [guide de déploiement à partir du code source](https://docs.dify.ai/getting-started/install-self-hosted/local-source-code)
 
 ## Prochaines étapes
 
@@ -192,7 +192,7 @@ Si vous devez personnaliser la configuration, veuillez
 
  vous référer aux commentaires dans notre fichier [docker-compose.yml](docker/docker-compose.yaml) et définir manuellement la configuration de l'environnement. Après avoir apporté les modifications, veuillez exécuter à nouveau `docker-compose up -d`. Vous pouvez voir la liste complète des variables d'environnement [ici](https://docs.dify.ai/getting-started/install-self-hosted/environments).
 
-Si vous souhaitez configurer une installation hautement disponible, il existe des [Helm Charts](https://helm.sh/) contribués par la communauté qui permettent de déployer Dify sur Kubernetes.
+Si vous souhaitez configurer une installation hautement disponible, il existe des [Helm Charts](https://helm.sh/) contribués par la communauté qui permettent de déployerSuperBotsur Kubernetes.
 
 - [Helm Chart par @LeoQuote](https://github.com/douban/charts/tree/master/charts/dify)
 - [Helm Chart par @BorisPolonsky](https://github.com/BorisPolonsky/dify-helm)
@@ -201,10 +201,10 @@ Si vous souhaitez configurer une installation hautement disponible, il existe de
 ## Contribuer
 
 Pour ceux qui souhaitent contribuer du code, consultez notre [Guide de contribution](https://github.com/langgenius/dify/blob/main/CONTRIBUTING.md). 
-Dans le même temps, veuillez envisager de soutenir Dify en le partageant sur les réseaux sociaux et lors d'événements et de conférences.
+Dans le même temps, veuillez envisager de soutenirSuperBoten le partageant sur les réseaux sociaux et lors d'événements et de conférences.
 
 
-> Nous recherchons des contributeurs pour aider à traduire Dify dans des langues autres que le mandarin ou l'anglais. Si vous êtes intéressé à aider, veuillez consulter le [README i18n](https://github.com/langgenius/dify/blob/main/web/i18n/README.md) pour plus d'informations, et laissez-nous un commentaire dans le canal `global-users` de notre [Serveur communautaire Discord](https://discord.gg/8Tpq4AcN9c).
+> Nous recherchons des contributeurs pour aider à traduireSuperBotdans des langues autres que le mandarin ou l'anglais. Si vous êtes intéressé à aider, veuillez consulter le [README i18n](https://github.com/langgenius/dify/blob/main/web/i18n/README.md) pour plus d'informations, et laissez-nous un commentaire dans le canal `global-users` de notre [Serveur communautaire Discord](https://discord.gg/8Tpq4AcN9c).
 
 **Contributeurs**
 

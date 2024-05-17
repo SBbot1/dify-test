@@ -1,4 +1,4 @@
-# Dify Code of Conduct
+#SuperBotCode of Conduct
 
 ## Our Pledge
 

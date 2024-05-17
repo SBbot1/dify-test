@@ -28,7 +28,7 @@ const translation = {
     callTimes: 'Liczba wywołań',
     usedToken: 'Zużyty token',
     setAPIBtn: 'Przejdź do konfiguracji dostawcy modelu',
-    tryCloud: 'Lub wypróbuj wersję chmurową Dify z darmowym limitem',
+    tryCloud: 'Lub wypróbuj wersję chmurowąSuperBotz darmowym limitem',
   },
   overview: {
     title: 'Przegląd',
@@ -66,7 +66,7 @@ const translation = {
           'Aby dodać aplikację czatu w dowolnym miejscu na swojej stronie internetowej, dodaj ten kod iframe do swojego kodu HTML.',
         scripts:
           'Aby dodać aplikację czatu w prawym dolnym rogu swojej strony internetowej, dodaj ten kod do swojego HTML.',
-        chromePlugin: 'Zainstaluj rozszerzenie Chrome Dify Chatbot',
+        chromePlugin: 'Zainstaluj rozszerzenie ChromeSuperBotChatbot',
         copied: 'Skopiowane',
         copy: 'Kopiuj',
       },

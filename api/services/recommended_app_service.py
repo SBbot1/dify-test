@@ -30,7 +30,7 @@ class RecommendedAppService:
             try:
                 result = cls._fetch_recommended_apps_from_dify_official(language)
             except Exception as e:
-                logger.warning(f'fetch recommended apps from dify official failed: {e}, switch to built-in.')
+                logger.warning(f'fetch recommended apps fromSuperBotofficial failed: {e}, switch to built-in.')
                 result = cls._fetch_recommended_apps_from_builtin(language)
         elif mode == 'db':
             result = cls._fetch_recommended_apps_from_db(language)
@@ -99,7 +99,7 @@ class RecommendedAppService:
     @classmethod
     def _fetch_recommended_apps_from_dify_official(cls, language: str) -> dict:
         """
-        Fetch recommended apps from dify official.
+        Fetch recommended apps fromSuperBotofficial.
         :param language: language
         :return:
         """
@@ -133,7 +133,7 @@ class RecommendedAppService:
             try:
                 result = cls._fetch_recommended_app_detail_from_dify_official(app_id)
             except Exception as e:
-                logger.warning(f'fetch recommended app detail from dify official failed: {e}, switch to built-in.')
+                logger.warning(f'fetch recommended app detail fromSuperBotofficial failed: {e}, switch to built-in.')
                 result = cls._fetch_recommended_app_detail_from_builtin(app_id)
         elif mode == 'db':
             result = cls._fetch_recommended_app_detail_from_db(app_id)
@@ -147,7 +147,7 @@ class RecommendedAppService:
     @classmethod
     def _fetch_recommended_app_detail_from_dify_official(cls, app_id: str) -> Optional[dict]:
         """
-        Fetch recommended app detail from dify official.
+        Fetch recommended app detail fromSuperBotofficial.
         :param app_id: App ID
         :return:
         """
@@ -233,7 +233,7 @@ class RecommendedAppService:
             try:
                 result = cls._fetch_recommended_apps_from_dify_official(language)
             except Exception as e:
-                logger.warning(f'fetch recommended apps from dify official failed: {e}, skip.')
+                logger.warning(f'fetch recommended apps fromSuperBotofficial failed: {e}, skip.')
                 continue
 
             templates['recommended_apps'][language] = result

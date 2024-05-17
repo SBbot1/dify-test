@@ -1,4 +1,4 @@
-# Dify Backend API
+#SuperBotBackend API
 
 ## Usage
 
@@ -8,7 +8,7 @@
 
    ```bash
    cd ../docker
-   docker-compose -f docker-compose.middleware.yaml -p dify up -d
+   docker-compose -f docker-compose.middleware.yaml -pSuperBotup -d
    cd ../api
    ```
 2. Copy `.env.example` to `.env`
@@ -19,7 +19,7 @@
    ```
 4. If you use Anaconda, create a new environment and activate it
    ```bash
-   conda create --name dify python=3.10
+   conda create --nameSuperBotpython=3.10
    conda activate dify
    ```
 5. Install dependencies
