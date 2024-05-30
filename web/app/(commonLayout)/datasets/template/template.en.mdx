@@ -1,22 +1,31 @@
-import { CodeGroup } from '@/app/components/develop/code.tsx'
-import { Row, Col, Properties, Property, Heading, SubProperty, Paragraph } from '@/app/components/develop/md.tsx'
+import { CodeGroup } from "@/app/components/develop/code.tsx";
+import {
+  Row,
+  Col,
+  Properties,
+  Property,
+  Heading,
+  SubProperty,
+  Paragraph,
+} from "@/app/components/develop/md.tsx";
 
 # Knowledge API
 
 <div>
   ### Authentication
 
-  Service API ofSuperBotauthenticates using an `API-Key`.
+Service API ofSuperBotauthenticates using an `API-Key`.
 
-  It is suggested that developers store the `API-Key` in the backend instead of sharing or storing it in the client side to avoid the leakage of the `API-Key`, which may lead to property loss.
+It is suggested that developers store the `API-Key` in the backend instead of sharing or storing it in the client side to avoid the leakage of the `API-Key`, which may lead to property loss.
 
-  All API requests should include your `API-Key` in the **`Authorization`** HTTP Header, as shown below:
+All API requests should include your `API-Key` in the **`Authorization`** HTTP Header, as shown below:
 
   <CodeGroup title="Code">
     ```javascript
       Authorization: Bearer {API_KEY}
 
     ```
+
   </CodeGroup>
 </div>
 
@@ -67,6 +76,7 @@ import { Row, Col, Properties, Property, Heading, SubProperty, Paragraph } from 
               - <code>max_tokens</code> Maximum length (token) defaults to 1000
       </Property>
     </Properties>
+
   </Col>
   <Col sticky>
     <CodeGroup
@@ -172,6 +182,7 @@ import { Row, Col, Properties, Property, Heading, SubProperty, Paragraph } from 
         Files that need to be uploaded.
       </Property>
     </Properties>
+
   </Col>
   <Col sticky>
     <CodeGroup
@@ -183,7 +194,7 @@ import { Row, Col, Properties, Property, Heading, SubProperty, Paragraph } from 
     ```bash {{ title: 'cURL' }}
     curl --location --request POST '${props.apiBaseUrl}/datasets/{dataset_id}/document/create_by_file' \
     --header 'Authorization: Bearer {api_key}' \
-    --form 'data="{\"name\":\"Dify\",\"indexing_technique\":\"high_quality\",\"process_rule\":{\"rules\":{\"pre_processing_rules\":[{\"id\":\"remove_extra_spaces\",\"enabled\":true},{\"id\":\"remove_urls_emails\",\"enabled\":true}],\"segmentation\":{\"separator\":\"###\",\"max_tokens\":500}},\"mode\":\"custom\"}}";type=text/plain' \
+    --form 'data="{\"name\":\"Superbot\",\"indexing_technique\":\"high_quality\",\"process_rule\":{\"rules\":{\"pre_processing_rules\":[{\"id\":\"remove_extra_spaces\",\"enabled\":true},{\"id\":\"remove_urls_emails\",\"enabled\":true}],\"segmentation\":{\"separator\":\"###\",\"max_tokens\":500}},\"mode\":\"custom\"}}";type=text/plain' \
     --form 'file=@"/path/to/file"'
     ```
     </CodeGroup>
@@ -198,7 +209,7 @@ import { Row, Col, Properties, Property, Heading, SubProperty, Paragraph } from 
           "upload_file_id": ""
         },
         "dataset_process_rule_id": "",
-        "name": "Dify.txt",
+        "name": "Superbot.txt",
         "created_from": "api",
         "created_by": "",
         "created_at": 1695308667,
@@ -388,6 +399,7 @@ import { Row, Col, Properties, Property, Heading, SubProperty, Paragraph } from 
               - <code>max_tokens</code> Maximum length (token) defaults to 1000
       </Property>
     </Properties>
+
   </Col>
   <Col sticky>
     <CodeGroup
@@ -485,18 +497,19 @@ import { Row, Col, Properties, Property, Heading, SubProperty, Paragraph } from 
               - <code>max_tokens</code> Maximum length (token) defaults to 1000
       </Property>
     </Properties>
+
   </Col>
   <Col sticky>
     <CodeGroup
       title="Request"
       tag="POST"
       label="/datasets/{dataset_id}/documents/{document_id}/update_by_file"
-      targetCode={`curl --location --request POST '${props.apiBaseUrl}/datasets/{dataset_id}/documents/{document_id}/update_by_file' \\\n--header 'Authorization: Bearer {api_key}' \\\n--form 'data="{"name":"Dify","indexing_technique":"high_quality","process_rule":{"rules":{"pre_processing_rules":[{"id":"remove_extra_spaces","enabled":true},{"id":"remove_urls_emails","enabled":true}],"segmentation":{"separator":"###","max_tokens":500}},"mode":"custom"}}";type=text/plain' \\\n--form 'file=@"/path/to/file"'`}
+      targetCode={`curl --location --request POST '${props.apiBaseUrl}/datasets/{dataset_id}/documents/{document_id}/update_by_file' \\\n--header 'Authorization: Bearer {api_key}' \\\n--form 'data="{"name":"Superbot","indexing_technique":"high_quality","process_rule":{"rules":{"pre_processing_rules":[{"id":"remove_extra_spaces","enabled":true},{"id":"remove_urls_emails","enabled":true}],"segmentation":{"separator":"###","max_tokens":500}},"mode":"custom"}}";type=text/plain' \\\n--form 'file=@"/path/to/file"'`}
     >
     ```bash {{ title: 'cURL' }}
     curl --location --request POST '${props.apiBaseUrl}/datasets/{dataset_id}/documents/{document_id}/update_by_file' \
     --header 'Authorization: Bearer {api_key}' \
-    --form 'data="{\"name\":\"Dify\",\"indexing_technique\":\"high_quality\",\"process_rule\":{\"rules\":{\"pre_processing_rules\":[{\"id\":\"remove_extra_spaces\",\"enabled\":true},{\"id\":\"remove_urls_emails\",\"enabled\":true}],\"segmentation\":{\"separator\":\"###\",\"max_tokens\":500}},\"mode\":\"custom\"}}";type=text/plain' \
+    --form 'data="{\"name\":\"Superbot\",\"indexing_technique\":\"high_quality\",\"process_rule\":{\"rules\":{\"pre_processing_rules\":[{\"id\":\"remove_extra_spaces\",\"enabled\":true},{\"id\":\"remove_urls_emails\",\"enabled\":true}],\"segmentation\":{\"separator\":\"###\",\"max_tokens\":500}},\"mode\":\"custom\"}}";type=text/plain' \
     --form 'file=@"/path/to/file"'
     ```
     </CodeGroup>
@@ -511,7 +524,7 @@ import { Row, Col, Properties, Property, Heading, SubProperty, Paragraph } from 
           "upload_file_id": ""
         },
         "dataset_process_rule_id": "",
-        "name": "Dify.txt",
+        "name": "Superbot.txt",
         "created_from": "api",
         "created_by": "",
         "created_at": 1695308667,
@@ -660,6 +673,7 @@ import { Row, Col, Properties, Property, Heading, SubProperty, Paragraph } from 
         Number of items returned, default 20, range 1-100(optional)
       </Property>
     </Properties>
+
   </Col>
   <Col sticky>
     <CodeGroup
@@ -734,6 +748,7 @@ import { Row, Col, Properties, Property, Heading, SubProperty, Paragraph } from 
         - <code>keywords</code> (list) Keywords(optional)
       </Property>
     </Properties>
+
   </Col>
   <Col sticky>
     <CodeGroup
@@ -821,6 +836,7 @@ import { Row, Col, Properties, Property, Heading, SubProperty, Paragraph } from 
         Search status，completed
       </Property>
     </Properties>
+
   </Col>
   <Col sticky>
     <CodeGroup
@@ -942,6 +958,7 @@ import { Row, Col, Properties, Property, Heading, SubProperty, Paragraph } from 
         - <code>enabled</code> (bool) false/true, not required
       </Property>
     </Properties>
+
   </Col>
   <Col sticky>
     <CodeGroup

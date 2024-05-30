@@ -58,7 +58,7 @@ const translation = {
           privacyPolicyPlaceholder:
             "Geben Sie den Link zur Datenschutzrichtlinie ein",
           privacyPolicyTip:
-            "Hilft Besuchern zu verstehen, welche Daten die Anwendung sammelt, siehe Difys <privacyPolicyLink>Datenschutzrichtlinie</privacyPolicyLink>.",
+            "Hilft Besuchern zu verstehen, welche Daten die Anwendung sammelt, siehe Superbots <privacyPolicyLink>Datenschutzrichtlinie</privacyPolicyLink>.",
           customDisclaimer: "Benutzerdefinierte Haftungsausschluss",
           customDisclaimerPlaceholder:
             "Geben Sie den benutzerdefinierten Haftungsausschluss-Text ein",
@@ -95,7 +95,7 @@ const translation = {
           step1: "Forken Sie den Client-Code und ändern Sie ihn",
           step1Tip:
             "Klicken Sie hier, um den Quellcode in Ihr GitHub-Konto zu forken und den Code zu ändern",
-          step1Operation: "Dify-WebClient",
+          step1Operation: "Superbot-WebClient",
           step2: "Deployen auf Vercel",
           step2Tip:
             "Klicken Sie hier, um das Repository in Vercel zu importieren und zu deployen",
