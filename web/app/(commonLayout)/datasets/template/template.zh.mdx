@@ -1,31 +1,22 @@
-import { CodeGroup } from "@/app/components/develop/code.tsx";
-import {
-  Row,
-  Col,
-  Properties,
-  Property,
-  Heading,
-  SubProperty,
-  Paragraph,
-} from "@/app/components/develop/md.tsx";
+import { CodeGroup } from '@/app/components/develop/code.tsx'
+import { Row, Col, Properties, Property, Heading, SubProperty, Paragraph } from '@/app/components/develop/md.tsx'
 
 # 知识库 API
 
 <div>
   ### 鉴权
 
-SuperBotService API 使用 `API-Key` 进行鉴权。
+ SuperBotService API 使用 `API-Key` 进行鉴权。
 
-建议开发者把 `API-Key` 放在后端存储，而非分享或者放在客户端存储，以免 `API-Key` 泄露，导致财产损失。
+  建议开发者把 `API-Key` 放在后端存储，而非分享或者放在客户端存储，以免 `API-Key` 泄露，导致财产损失。
 
-所有 API 请求都应在 **`Authorization`** HTTP Header 中包含您的 `API-Key`，如下所示：
+  所有 API 请求都应在 **`Authorization`** HTTP Header 中包含您的 `API-Key`，如下所示：
 
   <CodeGroup title="Code">
     ```javascript
       Authorization: Bearer {API_KEY}
 
     ```
-
   </CodeGroup>
 </div>
 
@@ -76,7 +67,6 @@ SuperBotService API 使用 `API-Key` 进行鉴权。
               - <code>max_tokens</code> 最大长度 (token) 默认为 1000
       </Property>
     </Properties>
-
   </Col>
   <Col sticky>
     <CodeGroup
@@ -182,7 +172,6 @@ SuperBotService API 使用 `API-Key` 进行鉴权。
         需要上传的文件。
       </Property>
     </Properties>
-
   </Col>
   <Col sticky>
     <CodeGroup
@@ -194,7 +183,7 @@ SuperBotService API 使用 `API-Key` 进行鉴权。
     ```bash {{ title: 'cURL' }}
     curl --location --request POST '${props.apiBaseUrl}/datasets/{dataset_id}/document/create_by_file' \
     --header 'Authorization: Bearer {api_key}' \
-    --form 'data="{\"name\":\"Superbot\",\"indexing_technique\":\"high_quality\",\"process_rule\":{\"rules\":{\"pre_processing_rules\":[{\"id\":\"remove_extra_spaces\",\"enabled\":true},{\"id\":\"remove_urls_emails\",\"enabled\":true}],\"segmentation\":{\"separator\":\"###\",\"max_tokens\":500}},\"mode\":\"custom\"}}";type=text/plain' \
+    --form 'data="{\"name\":\"Dify\",\"indexing_technique\":\"high_quality\",\"process_rule\":{\"rules\":{\"pre_processing_rules\":[{\"id\":\"remove_extra_spaces\",\"enabled\":true},{\"id\":\"remove_urls_emails\",\"enabled\":true}],\"segmentation\":{\"separator\":\"###\",\"max_tokens\":500}},\"mode\":\"custom\"}}";type=text/plain' \
     --form 'file=@"/path/to/file"'
     ```
     </CodeGroup>
@@ -209,7 +198,7 @@ SuperBotService API 使用 `API-Key` 进行鉴权。
           "upload_file_id": ""
         },
         "dataset_process_rule_id": "",
-        "name": "Superbot.txt",
+        "name": "Dify.txt",
         "created_from": "api",
         "created_by": "",
         "created_at": 1695308667,
@@ -399,7 +388,6 @@ SuperBotService API 使用 `API-Key` 进行鉴权。
               - <code>max_tokens</code> 最大长度 (token) 默认为 1000
       </Property>
     </Properties>
-
   </Col>
   <Col sticky>
     <CodeGroup
@@ -497,19 +485,18 @@ SuperBotService API 使用 `API-Key` 进行鉴权。
               - <code>max_tokens</code> 最大长度 (token) 默认为 1000
       </Property>
     </Properties>
-
   </Col>
   <Col sticky>
     <CodeGroup
       title="Request"
       tag="POST"
       label="/datasets/{dataset_id}/documents/{document_id}/update_by_file"
-      targetCode={`curl --location --request POST '${props.apiBaseUrl}/datasets/{dataset_id}/documents/{document_id}/update_by_file' \\\n--header 'Authorization: Bearer {api_key}' \\\n--form 'data="{"name":"Superbot","indexing_technique":"high_quality","process_rule":{"rules":{"pre_processing_rules":[{"id":"remove_extra_spaces","enabled":true},{"id":"remove_urls_emails","enabled":true}],"segmentation":{"separator":"###","max_tokens":500}},"mode":"custom"}}";type=text/plain' \\\n--form 'file=@"/path/to/file"'`}
+      targetCode={`curl --location --request POST '${props.apiBaseUrl}/datasets/{dataset_id}/documents/{document_id}/update_by_file' \\\n--header 'Authorization: Bearer {api_key}' \\\n--form 'data="{"name":"Dify","indexing_technique":"high_quality","process_rule":{"rules":{"pre_processing_rules":[{"id":"remove_extra_spaces","enabled":true},{"id":"remove_urls_emails","enabled":true}],"segmentation":{"separator":"###","max_tokens":500}},"mode":"custom"}}";type=text/plain' \\\n--form 'file=@"/path/to/file"'`}
     >
     ```bash {{ title: 'cURL' }}
     curl --location --request POST '${props.apiBaseUrl}/datasets/{dataset_id}/documents/{document_id}/update_by_file' \
     --header 'Authorization: Bearer {api_key}' \
-    --form 'data="{\"name\":\"Superbot\",\"indexing_technique\":\"high_quality\",\"process_rule\":{\"rules\":{\"pre_processing_rules\":[{\"id\":\"remove_extra_spaces\",\"enabled\":true},{\"id\":\"remove_urls_emails\",\"enabled\":true}],\"segmentation\":{\"separator\":\"###\",\"max_tokens\":500}},\"mode\":\"custom\"}}";type=text/plain' \
+    --form 'data="{\"name\":\"Dify\",\"indexing_technique\":\"high_quality\",\"process_rule\":{\"rules\":{\"pre_processing_rules\":[{\"id\":\"remove_extra_spaces\",\"enabled\":true},{\"id\":\"remove_urls_emails\",\"enabled\":true}],\"segmentation\":{\"separator\":\"###\",\"max_tokens\":500}},\"mode\":\"custom\"}}";type=text/plain' \
     --form 'file=@"/path/to/file"'
     ```
     </CodeGroup>
@@ -524,7 +511,7 @@ SuperBotService API 使用 `API-Key` 进行鉴权。
           "upload_file_id": ""
         },
         "dataset_process_rule_id": "",
-        "name": "Superbot.txt",
+        "name": "Dify.txt",
         "created_from": "api",
         "created_by": "",
         "created_at": 1695308667,
@@ -673,7 +660,6 @@ SuperBotService API 使用 `API-Key` 进行鉴权。
         返回条数，可选，默认 20，范围 1-100
       </Property>
     </Properties>
-
   </Col>
   <Col sticky>
     <CodeGroup
@@ -748,7 +734,6 @@ SuperBotService API 使用 `API-Key` 进行鉴权。
         - <code>keywords</code> (list) 关键字，非必填
       </Property>
     </Properties>
-
   </Col>
   <Col sticky>
     <CodeGroup
@@ -836,7 +821,6 @@ SuperBotService API 使用 `API-Key` 进行鉴权。
         搜索状态，completed
       </Property>
     </Properties>
-
   </Col>
   <Col sticky>
     <CodeGroup
@@ -958,7 +942,6 @@ SuperBotService API 使用 `API-Key` 进行鉴权。
         - <code>enabled</code> (bool) false/true，非必填
       </Property>
     </Properties>
-
   </Col>
   <Col sticky>
     <CodeGroup

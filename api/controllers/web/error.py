@@ -47,7 +47,7 @@ class ProviderQuotaExceededError(BaseHTTPException):
 
 class ProviderModelCurrentlyNotSupportError(BaseHTTPException):
     error_code = 'model_currently_not_support'
-    description = "Superbot Hosted OpenAI trial currently not support the GPT-4 model."
+    description = "Dify Hosted OpenAI trial currently not support the GPT-4 model."
     code = 400
 
 
