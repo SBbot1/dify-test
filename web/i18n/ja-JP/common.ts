@@ -158,10 +158,15 @@ const translation = {
     newPassword: "新しいパスワード",
     confirmPassword: "パスワードを確認",
     notEqual: "2つのパスワードが異なります。",
-    langGeniusAccount: "Superbotアカウント",
-    langGeniusAccountTip: "Superbotアカウントと関連するユーザーデータ。",
+    langGeniusAccount: "Difyアカウント",
+    langGeniusAccountTip: "Difyアカウントと関連するユーザーデータ。",
     editName: "名前を編集",
     showAppLength: "{{length}}アプリを表示",
+    delete: "アカウントを削除",
+    deleteTip:
+      "アカウントを削除すると、すべてのデータが完全に消去され、復元できなくなります。",
+    deleteConfirmTip:
+      "確認のため、登録したメールから次の内容をに送信してください ",
   },
   members: {
     team: "チーム",
@@ -175,6 +180,8 @@ const translation = {
     adminTip: "アプリの構築およびチーム設定の管理ができます",
     normal: "通常",
     normalTip: "アプリの使用のみが可能で、アプリの構築はできません",
+    editor: "エディター",
+    editorTip: "アプリの構築ができますが、チーム設定の管理はできません",
     inviteTeamMember: "チームメンバーを招待する",
     inviteTeamMemberTip:
       "彼らはサインイン後、直接あなたのチームデータにアクセスできます。",
@@ -185,7 +192,7 @@ const translation = {
     invitedAsRole: "{{role}}ユーザーとして招待されました",
     invitationSent: "招待が送信されました",
     invitationSentTip:
-      "招待が送信され、彼らはSuperbotにサインインしてあなたのチームデータにアクセスできます。",
+      "招待が送信され、彼らはDifyにサインインしてあなたのチームデータにアクセスできます。",
     invitationLink: "招待リンク",
     failedinvitationEmails: "以下のユーザーは正常に招待されませんでした",
     ok: "OK",
@@ -193,6 +200,7 @@ const translation = {
     removeFromTeamTip: "チームへのアクセスが削除されます",
     setAdmin: "管理者に設定",
     setMember: "通常のメンバーに設定",
+    setEditor: "エディターに設定",
     disinvite: "招待をキャンセル",
     deleteMember: "メンバーを削除",
     you: "(あなた)",

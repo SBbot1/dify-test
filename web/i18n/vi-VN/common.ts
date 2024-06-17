@@ -157,11 +157,16 @@ const translation = {
     newPassword: "Mật khẩu mới",
     confirmPassword: "Xác nhận mật khẩu",
     notEqual: "Hai mật khẩu không giống nhau.",
-    langGeniusAccount: "Tài khoản Superbot",
+    langGeniusAccount: "Tài khoản Dify",
     langGeniusAccountTip:
-      "Tài khoảnSuperBotcủa bạn và dữ liệu người dùng liên quan.",
+      "Tài khoản Dify của bạn và dữ liệu người dùng liên quan.",
     editName: "Chỉnh sửa Tên",
     showAppLength: "Hiển thị {{length}} ứng dụng",
+    delete: "Xóa tài khoản",
+    deleteTip:
+      "Xóa tài khoản của bạn sẽ xóa vĩnh viễn tất cả dữ liệu của bạn và không thể khôi phục được.",
+    deleteConfirmTip:
+      "Để xác nhận, vui lòng gửi thông tin sau từ email đã đăng ký của bạn tới ",
   },
   members: {
     team: "Nhóm",
@@ -175,6 +180,8 @@ const translation = {
     adminTip: "Có thể xây dựng ứng dụng và quản lý cài đặt nhóm",
     normal: "Bình thường",
     normalTip: "Chỉ có thể sử dụng ứng dụng, không thể xây dựng ứng dụng",
+    editor: "Biên tập viên",
+    editorTip: "Chỉ có thể xây dựng ứng dụng, không thể quản lý cài đặt nhóm",
     inviteTeamMember: "Mời thành viên nhóm",
     inviteTeamMemberTip:
       "Sau khi đăng nhập, họ có thể truy cập trực tiếp vào dữ liệu nhóm của bạn.",
@@ -185,7 +192,7 @@ const translation = {
     invitedAsRole: "Được mời với vai trò {{role}}",
     invitationSent: "Lời mời đã được gửi",
     invitationSentTip:
-      "Lời mời đã được gửi, và họ có thể đăng nhập vàoSuperBotđể truy cập vào dữ liệu nhóm của bạn.",
+      "Lời mời đã được gửi, và họ có thể đăng nhập vào Dify để truy cập vào dữ liệu nhóm của bạn.",
     invitationLink: "Liên kết Lời mời",
     failedinvitationEmails:
       "Dưới đây là danh sách email không gửi được lời mời",
@@ -194,6 +201,7 @@ const translation = {
     removeFromTeamTip: "Sẽ xóa quyền truy cập nhóm",
     setAdmin: "Đặt làm quản trị viên",
     setMember: "Đặt thành viên bình thường",
+    setEditor: "Đặt làm biên tập viên",
     disinvite: "Hủy lời mời",
     deleteMember: "Xóa thành viên",
     you: "(Bạn)",

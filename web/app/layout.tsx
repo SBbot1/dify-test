@@ -35,6 +35,7 @@ const LocaleLayout = ({ children }: { children: React.ReactNode }) => {
         data-api-prefix={process.env.NEXT_PUBLIC_API_PREFIX}
         data-pubic-api-prefix={process.env.NEXT_PUBLIC_PUBLIC_API_PREFIX}
         data-public-edition={process.env.NEXT_PUBLIC_EDITION}
+        data-public-support-mail-login={process.env.NEXT_PUBLIC_SUPPORT_MAIL_LOGIN}
         data-public-sentry-dsn={process.env.NEXT_PUBLIC_SENTRY_DSN}
         data-public-maintenance-notice={
           process.env.NEXT_PUBLIC_MAINTENANCE_NOTICE
@@ -44,8 +45,7 @@ const LocaleLayout = ({ children }: { children: React.ReactNode }) => {
         <Topbar />
         <BrowerInitor>
           <SentryInitor>
-            {/* @ts-expect-error Async Server Component */}
-            <I18nServer locale={locale}>{children}</I18nServer>
+            <I18nServer>{children}</I18nServer>
           </SentryInitor>
         </BrowerInitor>
       </body>

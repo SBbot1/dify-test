@@ -158,10 +158,15 @@ const translation = {
     newPassword: "Nowe hasło",
     confirmPassword: "Potwierdź hasło",
     notEqual: "Dwa hasła są różne.",
-    langGeniusAccount: "Konto Superbot",
-    langGeniusAccountTip: "Twoje kontoSuperBoti powiązane dane użytkownika.",
+    langGeniusAccount: "Konto Dify",
+    langGeniusAccountTip: "Twoje konto Dify i powiązane dane użytkownika.",
     editName: "Edytuj nazwę",
     showAppLength: "Pokaż {{length}} aplikacje",
+    delete: "Usuń konto",
+    deleteTip:
+      "Usunięcie konta spowoduje trwałe usunięcie wszystkich danych i nie będzie można ich odzyskać.",
+    deleteConfirmTip:
+      "Aby potwierdzić, wyślij następujące informacje z zarejestrowanego adresu e-mail na adres ",
   },
   members: {
     team: "Zespół",
@@ -175,6 +180,9 @@ const translation = {
     adminTip: "Może tworzyć aplikacje i zarządzać ustawieniami zespołu",
     normal: "Normalny",
     normalTip: "Może tylko korzystać z aplikacji, nie może tworzyć aplikacji",
+    editor: "Edytor",
+    editorTip:
+      "Może tworzyć i edytować aplikacje, ale nie zarządzać ustawieniami zespołu",
     inviteTeamMember: "Dodaj członka zespołu",
     inviteTeamMemberTip:
       "Mogą uzyskać bezpośredni dostęp do danych Twojego zespołu po zalogowaniu.",
@@ -185,7 +193,7 @@ const translation = {
     invitedAsRole: "Zaproszony jako użytkownik typu {{role}}",
     invitationSent: "Zaproszenie wysłane",
     invitationSentTip:
-      "Zaproszenie zostało wysłane, a oni mogą zalogować się do Superbot, aby uzyskać dostęp do danych Twojego zespołu.",
+      "Zaproszenie zostało wysłane, a oni mogą zalogować się do Dify, aby uzyskać dostęp do danych Twojego zespołu.",
     invitationLink: "Link zaproszenia",
     failedinvitationEmails: "Poniższe osoby nie zostały pomyślnie zaproszone",
     ok: "OK",
@@ -193,6 +201,7 @@ const translation = {
     removeFromTeamTip: "Usunie dostęp do zespołu",
     setAdmin: "Ustaw jako administratora",
     setMember: "Ustaw jako zwykłego członka",
+    setEditor: "Ustaw jako edytora",
     disinvite: "Anuluj zaproszenie",
     deleteMember: "Usuń członka",
     you: "(Ty)",

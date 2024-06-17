@@ -29,6 +29,7 @@ const translation = {
     talkToSales: "Talk to Sales",
     modelProviders: "Model Providers",
     teamMembers: "Team Members",
+    annotationQuota: "Annotation Quota",
     buildApps: "Build Apps",
     vectorSpace: "Vector Space",
     vectorSpaceBillingTooltip:
@@ -65,6 +66,9 @@ const translation = {
       bulkUpload: "Bulk upload documents",
       agentMode: "Agent Mode",
       workflow: "Workflow",
+      llmLoadingBalancing: "LLM Load Balancing",
+      llmLoadingBalancingTooltip:
+        "Add multiple API keys to models, effectively bypassing the API rate limits. ",
     },
     comingSoon: "Coming soon",
     member: "Member",

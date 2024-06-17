@@ -159,10 +159,15 @@ const translation = {
     newPassword: "Neues Passwort",
     confirmPassword: "Passwort bestätigen",
     notEqual: "Die Passwörter sind unterschiedlich.",
-    langGeniusAccount: "Superbot-Konto",
-    langGeniusAccountTip: "Ihr Superbot-Konto und zugehörige Benutzerdaten.",
+    langGeniusAccount: "Dify-Konto",
+    langGeniusAccountTip: "Ihr Dify-Konto und zugehörige Benutzerdaten.",
     editName: "Namen bearbeiten",
     showAppLength: "{{length}} Apps anzeigen",
+    delete: "Konto löschen",
+    deleteTip:
+      "Wenn Sie Ihr Konto löschen, werden alle Ihre Daten dauerhaft gelöscht und können nicht wiederhergestellt werden.",
+    deleteConfirmTip:
+      "Zur Bestätigung senden Sie bitte Folgendes von Ihrer registrierten E-Mail-Adresse an ",
   },
   members: {
     team: "Team",
@@ -176,6 +181,8 @@ const translation = {
     adminTip: "Kann Apps erstellen & Team-Einstellungen verwalten",
     normal: "Normal",
     normalTip: "Kann nur Apps verwenden, kann keine Apps erstellen",
+    editor: "Editor",
+    editorTip: "Kann Apps erstellen & bearbeiten",
     inviteTeamMember: "Teammitglied hinzufügen",
     inviteTeamMemberTip:
       "Sie können direkt nach der Anmeldung auf Ihre Teamdaten zugreifen.",
@@ -186,7 +193,7 @@ const translation = {
     invitedAsRole: "Eingeladen als {{role}}-Benutzer",
     invitationSent: "Einladung gesendet",
     invitationSentTip:
-      "Einladung gesendet, und sie können sich beiSuperBotanmelden, um auf Ihre Teamdaten zuzugreifen.",
+      "Einladung gesendet, und sie können sich bei Dify anmelden, um auf Ihre Teamdaten zuzugreifen.",
     invitationLink: "Einladungslink",
     failedinvitationEmails:
       "Die folgenden Benutzer wurden nicht erfolgreich eingeladen",
@@ -195,6 +202,7 @@ const translation = {
     removeFromTeamTip: "Wird den Teamzugang entfernen",
     setAdmin: "Als Administrator einstellen",
     setMember: "Als normales Mitglied einstellen",
+    setEditor: "Als Editor einstellen",
     disinvite: "Einladung widerrufen",
     deleteMember: "Mitglied löschen",
     you: "(Du)",

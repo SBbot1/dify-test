@@ -157,10 +157,15 @@ const translation = {
     newPassword: "Parolă nouă",
     confirmPassword: "Confirmă parola",
     notEqual: "Cele două parole sunt diferite.",
-    langGeniusAccount: "Cont Superbot",
-    langGeniusAccountTip: "ContulSuperBotși datele de utilizator asociate.",
+    langGeniusAccount: "Cont Dify",
+    langGeniusAccountTip: "Contul Dify și datele de utilizator asociate.",
     editName: "Editează Nume",
     showAppLength: "Afișează {{length}} aplicații",
+    delete: "Șterge contul",
+    deleteTip:
+      "Ștergerea contului vă va șterge definitiv toate datele și nu pot fi recuperate.",
+    deleteConfirmTip:
+      "Pentru a confirma, trimiteți următoarele din e-mailul înregistrat la ",
   },
   members: {
     team: "Echipă",
@@ -174,6 +179,9 @@ const translation = {
     adminTip: "Poate construi aplicații și gestiona setările echipei",
     normal: "Normal",
     normalTip: "Poate doar utiliza aplicații, nu poate construi aplicații",
+    editor: "Editor",
+    editorTip:
+      "Poate construi aplicații, dar nu poate gestiona setările echipei",
     inviteTeamMember: "Adaugă membru în echipă",
     inviteTeamMemberTip:
       "Pot accesa direct datele echipei dvs. după autentificare.",
@@ -184,7 +192,7 @@ const translation = {
     invitedAsRole: "Invitat ca utilizator {{role}}",
     invitationSent: "Invitație trimisă",
     invitationSentTip:
-      "Invitația a fost trimisă și pot să se autentifice înSuperBotpentru a accesa datele echipei dvs.",
+      "Invitația a fost trimisă și pot să se autentifice în Dify pentru a accesa datele echipei dvs.",
     invitationLink: "Link de invitație",
     failedinvitationEmails:
       "Următorii utilizatori nu au fost invitați cu succes",
@@ -193,6 +201,7 @@ const translation = {
     removeFromTeamTip: "Va elimina accesul la echipă",
     setAdmin: "Setează ca administrator",
     setMember: "Setează ca membru obișnuit",
+    setEditor: "Setează ca editor",
     disinvite: "Anulează invitația",
     deleteMember: "Șterge membru",
     you: "(Dvs.)",

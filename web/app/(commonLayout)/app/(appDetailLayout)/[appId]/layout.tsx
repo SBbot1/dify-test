@@ -42,7 +42,8 @@ const AppDetailLayout: FC<IAppDetailLayoutProps> = (props) => {
   const pathname = usePathname();
   const media = useBreakpoints();
   const isMobile = media === MediaType.mobile;
-  const { isCurrentWorkspaceManager } = useAppContext();
+  const { isCurrentWorkspaceManager, isCurrentWorkspaceEditor } =
+    useAppContext();
   const { appDetail, setAppDetail, setAppSiderbarExpand } = useStore(
     useShallow((state) => ({
       appDetail: state.appDetail,
@@ -60,9 +61,14 @@ const AppDetailLayout: FC<IAppDetailLayoutProps> = (props) => {
   >([]);
 
   const getNavigations = useCallback(
-    (appId: string, isCurrentWorkspaceManager: boolean, mode: string) => {
+    (
+      appId: string,
+      isCurrentWorkspaceManager: boolean,
+      isCurrentWorkspaceEditor: boolean,
+      mode: string
+    ) => {
       const navs = [
-        ...(isCurrentWorkspaceManager
+        ...(isCurrentWorkspaceEditor
           ? [
               {
                 name: t("common.appMenus.promptEng"),
@@ -82,15 +88,19 @@ const AppDetailLayout: FC<IAppDetailLayoutProps> = (props) => {
           icon: TerminalSquare,
           selectedIcon: TerminalSquareSolid,
         },
-        {
-          name:
-            mode !== "workflow"
-              ? t("common.appMenus.logAndAnn")
-              : t("common.appMenus.logs"),
-          href: `/app/${appId}/logs`,
-          icon: FileHeart02,
-          selectedIcon: FileHeart02Solid,
-        },
+        ...(isCurrentWorkspaceManager
+          ? [
+              {
+                name:
+                  mode !== "workflow"
+                    ? t("common.appMenus.logAndAnn")
+                    : t("common.appMenus.logs"),
+                href: `/app/${appId}/logs`,
+                icon: FileHeart02,
+                selectedIcon: FileHeart02Solid,
+              },
+            ]
+          : []),
         {
           name: t("common.appMenus.overview"),
           href: `/app/${appId}/overview`,
@@ -118,27 +128,36 @@ const AppDetailLayout: FC<IAppDetailLayoutProps> = (props) => {
 
   useEffect(() => {
     setAppDetail();
-    fetchAppDetail({ url: "/apps", id: appId }).then((res) => {
-      // redirections
-      if (
-        (res.mode === "workflow" || res.mode === "advanced-chat") &&
-        pathname.endsWith("configuration")
-      ) {
-        router.replace(`/app/${appId}/workflow`);
-      } else if (
-        res.mode !== "workflow" &&
-        res.mode !== "advanced-chat" &&
-        pathname.endsWith("workflow")
-      ) {
-        router.replace(`/app/${appId}/configuration`);
-      } else {
-        setAppDetail(res);
-        setNavigation(
-          getNavigations(appId, isCurrentWorkspaceManager, res.mode)
-        );
-      }
-    });
-  }, [appId, isCurrentWorkspaceManager]);
+    fetchAppDetail({ url: "/apps", id: appId })
+      .then((res) => {
+        // redirections
+        if (
+          (res.mode === "workflow" || res.mode === "advanced-chat") &&
+          pathname.endsWith("configuration")
+        ) {
+          router.replace(`/app/${appId}/workflow`);
+        } else if (
+          res.mode !== "workflow" &&
+          res.mode !== "advanced-chat" &&
+          pathname.endsWith("workflow")
+        ) {
+          router.replace(`/app/${appId}/configuration`);
+        } else {
+          setAppDetail(res);
+          setNavigation(
+            getNavigations(
+              appId,
+              isCurrentWorkspaceManager,
+              isCurrentWorkspaceEditor,
+              res.mode
+            )
+          );
+        }
+      })
+      .catch((e: any) => {
+        if (e.status === 404) router.replace("/apps");
+      });
+  }, [appId, isCurrentWorkspaceManager, isCurrentWorkspaceEditor]);
 
   useUnmount(() => {
     setAppDetail();

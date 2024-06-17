@@ -158,10 +158,15 @@ const translation = {
     newPassword: "Nova senha",
     confirmPassword: "Confirmar senha",
     notEqual: "As duas senhas são diferentes.",
-    langGeniusAccount: "Conta Superbot",
-    langGeniusAccountTip: "Sua contaSuperBote dados de usuário associados.",
+    langGeniusAccount: "Conta Dify",
+    langGeniusAccountTip: "Sua conta Dify e dados de usuário associados.",
     editName: "Editar Nome",
     showAppLength: "Mostrar {{length}} apps",
+    delete: "Excluir conta",
+    deleteTip:
+      "Excluir sua conta apagará permanentemente todos os seus dados e eles não poderão ser recuperados.",
+    deleteConfirmTip:
+      "Para confirmar, envie o seguinte do seu e-mail registrado para ",
   },
   members: {
     team: "Equipe",
@@ -175,6 +180,9 @@ const translation = {
     adminTip: "Pode criar aplicativos e gerenciar configurações da equipe",
     normal: "Normal",
     normalTip: "Só pode usar aplicativos, não pode criar aplicativos",
+    editor: "Editor",
+    editorTip:
+      "Pode editar aplicativos, mas não pode gerenciar configurações da equipe",
     inviteTeamMember: "Adicionar membro da equipe",
     inviteTeamMemberTip:
       "Eles podem acessar os dados da sua equipe diretamente após fazer login.",
@@ -185,7 +193,7 @@ const translation = {
     invitedAsRole: "Convidado como usuário {{role}}",
     invitationSent: "Convite enviado",
     invitationSentTip:
-      "Convite enviado e eles podem fazer login noSuperBotpara acessar os dados da sua equipe.",
+      "Convite enviado e eles podem fazer login no Dify para acessar os dados da sua equipe.",
     invitationLink: "Link do Convite",
     failedinvitationEmails:
       "Os seguintes usuários não foram convidados com sucesso",
@@ -194,6 +202,7 @@ const translation = {
     removeFromTeamTip: "Removerá o acesso da equipe",
     setAdmin: "Definir como administrador",
     setMember: "Definir como membro comum",
+    setEditor: "Definir como editor",
     disinvite: "Cancelar o convite",
     deleteMember: "Excluir Membro",
     you: "(Você)",

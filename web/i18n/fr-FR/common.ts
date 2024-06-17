@@ -158,11 +158,16 @@ const translation = {
     newPassword: "Nouveau mot de passe",
     confirmPassword: "Confirmer le mot de passe",
     notEqual: "Les deux mots de passe sont différents.",
-    langGeniusAccount: "Compte Superbot",
+    langGeniusAccount: "Compte Dify",
     langGeniusAccountTip:
-      "Votre compteSuperBotet les données utilisateur associées.",
+      "Votre compte Dify et les données utilisateur associées.",
     editName: "Modifier le nom",
     showAppLength: "Afficher {{length}} applications",
+    delete: "Supprimer le compte",
+    deleteTip:
+      "La suppression de votre compte effacera définitivement toutes vos données et elles ne pourront pas être récupérées.",
+    deleteConfirmTip:
+      "Pour confirmer, veuillez envoyer ce qui suit depuis votre adresse e-mail enregistrée à ",
   },
   members: {
     team: "Équipe",
@@ -178,6 +183,9 @@ const translation = {
     normal: "Normal",
     normalTip:
       "Peut seulement utiliser des applications, ne peut pas construire des applications",
+    editor: "Éditeur",
+    editorTip:
+      "Peut construire des applications, mais ne peut pas gérer les paramètres de l'équipe",
     inviteTeamMember: "Ajouter un membre de l'équipe",
     inviteTeamMemberTip:
       "Ils peuvent accéder directement à vos données d'équipe après s'être connectés.",
@@ -188,7 +196,7 @@ const translation = {
     invitedAsRole: "Invité en tant qu'utilisateur {{role}}",
     invitationSent: "Invitation envoyée",
     invitationSentTip:
-      "Invitation envoyée, et ils peuvent se connecter àSuperBotpour accéder aux données de votre équipe.",
+      "Invitation envoyée, et ils peuvent se connecter à Dify pour accéder aux données de votre équipe.",
     invitationLink: "Lien d'invitation",
     failedinvitationEmails:
       "Les utilisateurs ci-dessous n'ont pas été invités avec succès",
@@ -197,6 +205,7 @@ const translation = {
     removeFromTeamTip: "Supprimera l'accès de l'équipe",
     setAdmin: "Définir comme administrateur",
     setMember: "Définir en tant que membre ordinaire",
+    setEditor: "Définir en tant qu'éditeur",
     disinvite: "Annuler l'invitation",
     deleteMember: "Supprimer Membre",
     you: "(Vous)",
