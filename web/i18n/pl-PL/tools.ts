@@ -71,11 +71,12 @@ const translation = {
         custom: "Niestandardowa",
       },
     },
-    privacyPolicy: "Polityka prywatności",
-    privacyPolicyPlaceholder: "Proszę wprowadzić politykę prywatności",
-    customDisclaimer: "Oświadczenie niestandardowe",
-    customDisclaimerPlaceholder:
-      "Proszę wprowadzić oświadczenie niestandardowe",
+    privacyPolicy: 'Polityka prywatności',
+    privacyPolicyPlaceholder: 'Proszę wprowadzić politykę prywatności',
+    customDisclaimer: 'Oświadczenie niestandardowe',
+    customDisclaimerPlaceholder: 'Proszę wprowadzić oświadczenie niestandardowe',
+    deleteToolConfirmTitle: 'Skasuj ten przyrząd?',
+    deleteToolConfirmContent: 'Usunięcie narzędzia jest nieodwracalne. Użytkownicy nie będą mieli już dostępu do Twojego narzędzia.',
   },
   test: {
     title: "Test",

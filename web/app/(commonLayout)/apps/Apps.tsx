@@ -1,29 +1,29 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
-import useSWRInfinite from "swr/infinite";
-import { useTranslation } from "react-i18next";
-import { useDebounceFn } from "ahooks";
-import AppCard from "./AppCard";
-import NewAppCard from "./NewAppCard";
-import useAppsQueryState from "./hooks/useAppsQueryState";
-import type { AppListResponse } from "@/models/app";
-import { fetchAppList } from "@/service/apps";
-import { useAppContext } from "@/context/app-context";
-import { NEED_REFRESH_APP_LIST_KEY } from "@/config";
-import { CheckModal } from "@/hooks/use-pay";
-import TabSliderNew from "@/app/components/base/tab-slider-new";
-import { useTabSearchParams } from "@/hooks/use-tab-searchparams";
-import { DotsGrid } from "@/app/components/base/icons/src/vender/line/general";
+import { useCallback, useEffect, useRef, useState } from 'react'
+import useSWRInfinite from 'swr/infinite'
+import { useTranslation } from 'react-i18next'
+import { useDebounceFn } from 'ahooks'
 import {
-  ChatBot,
-  CuteRobot,
-} from "@/app/components/base/icons/src/vender/line/communication";
-import { Route } from "@/app/components/base/icons/src/vender/line/mapsAndTravel";
-import SearchInput from "@/app/components/base/search-input";
-import { useStore as useTagStore } from "@/app/components/base/tag-management/store";
-import TagManagementModal from "@/app/components/base/tag-management";
-import TagFilter from "@/app/components/base/tag-management/filter";
+  RiApps2Line,
+  RiExchange2Line,
+  RiMessage3Line,
+  RiRobot3Line,
+} from '@remixicon/react'
+import AppCard from './AppCard'
+import NewAppCard from './NewAppCard'
+import useAppsQueryState from './hooks/useAppsQueryState'
+import type { AppListResponse } from '@/models/app'
+import { fetchAppList } from '@/service/apps'
+import { useAppContext } from '@/context/app-context'
+import { NEED_REFRESH_APP_LIST_KEY } from '@/config'
+import { CheckModal } from '@/hooks/use-pay'
+import TabSliderNew from '@/app/components/base/tab-slider-new'
+import { useTabSearchParams } from '@/hooks/use-tab-searchparams'
+import SearchInput from '@/app/components/base/search-input'
+import { useStore as useTagStore } from '@/app/components/base/tag-management/store'
+import TagManagementModal from '@/app/components/base/tag-management'
+import TagFilter from '@/app/components/base/tag-management/filter'
 
 const getKey = (
   pageIndex: number,
@@ -83,27 +83,11 @@ const Apps = () => {
 
   const anchorRef = useRef<HTMLDivElement>(null);
   const options = [
-    {
-      value: "all",
-      text: t("app.types.all"),
-      icon: <DotsGrid className="w-[14px] h-[14px] mr-1" />,
-    },
-    {
-      value: "chat",
-      text: t("app.types.chatbot"),
-      icon: <ChatBot className="w-[14px] h-[14px] mr-1" />,
-    },
-    {
-      value: "agent-chat",
-      text: t("app.types.agent"),
-      icon: <CuteRobot className="w-[14px] h-[14px] mr-1" />,
-    },
-    {
-      value: "workflow",
-      text: t("app.types.workflow"),
-      icon: <Route className="w-[14px] h-[14px] mr-1" />,
-    },
-  ];
+    { value: 'all', text: t('app.types.all'), icon: <RiApps2Line className='w-[14px] h-[14px] mr-1' /> },
+    { value: 'chat', text: t('app.types.chatbot'), icon: <RiMessage3Line className='w-[14px] h-[14px] mr-1' /> },
+    { value: 'agent-chat', text: t('app.types.agent'), icon: <RiRobot3Line className='w-[14px] h-[14px] mr-1' /> },
+    { value: 'workflow', text: t('app.types.workflow'), icon: <RiExchange2Line className='w-[14px] h-[14px] mr-1' /> },
+  ]
 
   useEffect(() => {
     document.title = `${t("common.menus.apps")} -  Superbot`;

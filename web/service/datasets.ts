@@ -72,6 +72,12 @@ export const createEmptyDataset: Fetcher<DataSet, { name: string }> = ({ name })
   return post<DataSet>('/datasets', { body: { name } })
 }
 
+export const checkIsUsedInApp: Fetcher<{ is_using: boolean }, string> = (id) => {
+  return get<{ is_using: boolean }>(`/datasets/${id}/use-check`, {}, {
+    silent: true,
+  })
+}
+
 export const deleteDataset: Fetcher<DataSet, string> = (datasetID) => {
   return del<DataSet>(`/datasets/${datasetID}`)
 }
@@ -231,15 +237,15 @@ export const fetchDatasetApiBaseUrl: Fetcher<{ api_base_url: string }, string> =
   return get<{ api_base_url: string }>(url)
 }
 
-export const fetchFirecrawlApiKey = () => {
+export const fetchDataSources = () => {
   return get<CommonResponse>('api-key-auth/data-source')
 }
 
-export const createFirecrawlApiKey: Fetcher<CommonResponse, Record<string, any>> = (body) => {
+export const createDataSourceApiKeyBinding: Fetcher<CommonResponse, Record<string, any>> = (body) => {
   return post<CommonResponse>('api-key-auth/data-source/binding', { body })
 }
 
-export const removeFirecrawlApiKey: Fetcher<CommonResponse, string> = (id: string) => {
+export const removeDataSourceApiKeyBinding: Fetcher<CommonResponse, string> = (id: string) => {
   return del<CommonResponse>(`api-key-auth/data-source/${id}`)
 }
 

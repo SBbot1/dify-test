@@ -70,10 +70,12 @@ const translation = {
         custom: "Custom",
       },
     },
-    privacyPolicy: "Політика конфіденційності",
-    privacyPolicyPlaceholder: "Введіть політику конфіденційності",
-    customDisclaimer: "Власний відомості",
-    customDisclaimerPlaceholder: "Введіть власні відомості",
+    privacyPolicy: 'Політика конфіденційності',
+    privacyPolicyPlaceholder: 'Введіть політику конфіденційності',
+    customDisclaimer: 'Власний відомості',
+    customDisclaimerPlaceholder: 'Введіть власні відомості',
+    deleteToolConfirmTitle: 'Видалити цей інструмент?',
+    deleteToolConfirmContent: 'Видалення інструменту є незворотнім. Користувачі більше не зможуть отримати доступ до вашого інструменту.',
   },
 
   test: {

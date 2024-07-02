@@ -71,11 +71,12 @@ const translation = {
         custom: "Personnalisé",
       },
     },
-    privacyPolicy: "Politique de confidentialité",
-    privacyPolicyPlaceholder: "Veuillez entrer la politique de confidentialité",
-    customDisclaimer: "Clause de non-responsabilité personnalisée",
-    customDisclaimerPlaceholder:
-      "Entrez le texte de la clause de non-responsabilité personnalisée",
+    privacyPolicy: 'Politique de confidentialité',
+    privacyPolicyPlaceholder: 'Veuillez entrer la politique de confidentialité',
+    customDisclaimer: 'Clause de non-responsabilité personnalisée',
+    customDisclaimerPlaceholder: 'Entrez le texte de la clause de non-responsabilité personnalisée',
+    deleteToolConfirmTitle: 'Supprimer cet outil ?',
+    deleteToolConfirmContent: 'La suppression de l\'outil est irréversible. Les utilisateurs ne pourront plus accéder à votre outil.',
   },
   test: {
     title: "Test",

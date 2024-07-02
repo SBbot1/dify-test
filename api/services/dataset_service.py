@@ -15,6 +15,7 @@ from core.model_manager import ModelManager
 from core.model_runtime.entities.model_entities import ModelType
 from core.rag.datasource.keyword.keyword_factory import Keyword
 from core.rag.models.document import Document as RAGDocument
+from core.rag.retrieval.retrival_methods import RetrievalMethod
 from events.dataset_event import dataset_was_deleted
 from events.document_event import document_was_deleted
 from extensions.ext_database import db
@@ -33,7 +34,7 @@ from models.dataset import (
 from models.model import UploadFile
 from models.source import DataSourceOauthBinding
 from services.errors.account import NoPermissionError
-from services.errors.dataset import DatasetInUseError, DatasetNameDuplicateError
+from services.errors.dataset import DatasetNameDuplicateError
 from services.errors.document import DocumentIndexingError
 from services.errors.file import FileNotExistsError
 from services.feature_service import FeatureModel, FeatureService
@@ -233,9 +234,6 @@ class DatasetService:
 
     @staticmethod
     def delete_dataset(dataset_id, user):
-        count = AppDatasetJoin.query.filter_by(dataset_id=dataset_id).count()
-        if count > 0:
-            raise DatasetInUseError()
 
         dataset = DatasetService.get_dataset(dataset_id)
 
@@ -249,6 +247,13 @@ class DatasetService:
         db.session.delete(dataset)
         db.session.commit()
         return True
+
+    @staticmethod
+    def dataset_use_check(dataset_id) -> bool:
+        count = AppDatasetJoin.query.filter_by(dataset_id=dataset_id).count()
+        if count > 0:
+            return True
+        return False
 
     @staticmethod
     def check_dataset_permission(dataset, user):
@@ -602,7 +607,7 @@ class DocumentService:
                 dataset.collection_binding_id = dataset_collection_binding.id
                 if not dataset.retrieval_model:
                     default_retrieval_model = {
-                        'search_method': 'semantic_search',
+                        'search_method': RetrievalMethod.SEMANTIC_SEARCH,
                         'reranking_enable': False,
                         'reranking_model': {
                             'reranking_provider_name': '',
@@ -695,7 +700,7 @@ class DocumentService:
             elif document_data["data_source"]["type"] == "notion_import":
                 notion_info_list = document_data["data_source"]['info_list']['notion_info_list']
                 exist_page_ids = []
-                exist_document = dict()
+                exist_document = {}
                 documents = Document.query.filter_by(
                     dataset_id=dataset.id,
                     tenant_id=current_user.current_tenant_id,
@@ -959,7 +964,7 @@ class DocumentService:
                 retrieval_model = document_data['retrieval_model']
             else:
                 default_retrieval_model = {
-                    'search_method': 'semantic_search',
+                    'search_method': RetrievalMethod.SEMANTIC_SEARCH,
                     'reranking_enable': False,
                     'reranking_model': {
                         'reranking_provider_name': '',
