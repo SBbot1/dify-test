@@ -1,5 +1,3 @@
-import classNames from 'classnames'
-import style from '../list.module.css'
 import Apps from './Apps'
 import { getLocaleOnServer, useTranslation as translate } from '@/i18n/server'
 

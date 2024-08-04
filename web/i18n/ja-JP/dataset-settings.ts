@@ -1,6 +1,6 @@
 const translation = {
-  title: "ナレッジの設定",
-  desc: "ここではナレッジのプロパティと動作方法を変更できます。",
+  title: 'ナレッジの設定',
+  desc: 'ここではナレッジのプロパティと動作方法を変更できます。',
   form: {
     name: 'ナレッジ名',
     namePlaceholder: 'ナレッジ名を入力してください',
@@ -12,6 +12,8 @@ const translation = {
     permissions: '権限',
     permissionsOnlyMe: '自分のみ',
     permissionsAllMember: 'すべてのチームメンバー',
+    permissionsInvitedMembers: '一部のチームメンバー',
+    me: '(あなた様)',
     indexMethod: 'インデックス方法',
     indexMethodHighQuality: '高品質',
     indexMethodHighQualityTip: 'ユーザーがクエリを実行する際により高い精度を提供するために、Embeddingモデルを呼び出して処理を行う。',
@@ -21,14 +23,14 @@ const translation = {
     embeddingModelTip: '埋め込みモデルを変更するには、',
     embeddingModelTipLink: '設定',
     retrievalSetting: {
-      title: "検索設定",
-      learnMore: "詳細を学ぶ",
-      description: " 検索方法についての詳細",
+      title: '検索設定',
+      learnMore: '詳細を学ぶ',
+      description: ' 検索方法についての詳細',
       longDescription:
-        " 検索方法についての詳細については、いつでもナレッジの設定で変更できます。",
+        ' 検索方法についての詳細については、いつでもナレッジの設定で変更できます。',
     },
-    save: "保存",
+    save: '保存',
   },
-};
+}
 
-export default translation;
+export default translation

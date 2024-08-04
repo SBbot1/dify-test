@@ -1,33 +1,33 @@
-"use client";
-import React, { useEffect, useState } from "react";
-import cn from "classnames";
-import Script from "next/script";
-import Loading from "../components/base/loading";
-import Forms from "./forms";
-import Header from "./_header";
-import style from "./page.module.css";
-import UserSSOForm from "./userSSOForm";
-import { IS_CE_EDITION } from "@/config";
+'use client'
+import React, { useEffect, useState } from 'react'
+import Script from 'next/script'
+import Loading from '../components/base/loading'
+import Forms from './forms'
+import Header from './_header'
+import style from './page.module.css'
+import UserSSOForm from './userSSOForm'
+import cn from '@/utils/classnames'
+import { IS_CE_EDITION } from '@/config'
 
-import type { SystemFeatures } from "@/types/feature";
-import { defaultSystemFeatures } from "@/types/feature";
-import { getSystemFeatures } from "@/service/common";
+import type { SystemFeatures } from '@/types/feature'
+import { defaultSystemFeatures } from '@/types/feature'
+import { getSystemFeatures } from '@/service/common'
 
 const SignIn = () => {
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(true)
   const [systemFeatures, setSystemFeatures] = useState<SystemFeatures>(
-    defaultSystemFeatures
-  );
+    defaultSystemFeatures,
+  )
 
   useEffect(() => {
     getSystemFeatures()
       .then((res) => {
-        setSystemFeatures(res);
+        setSystemFeatures(res)
       })
       .finally(() => {
-        setLoading(false);
-      });
-  }, []);
+        setLoading(false)
+      })
+  }, [])
 
   return (
     <>
@@ -36,7 +36,7 @@ const SignIn = () => {
           <Script
             strategy="beforeInteractive"
             async
-            src={"https://www.googletagmanager.com/gtag/js?id=AW-11217955271"}
+            src={'https://www.googletagmanager.com/gtag/js?id=AW-11217955271'}
           ></Script>
           <Script
             id="ga-monitor-register"
@@ -54,16 +54,16 @@ gtag('config', 'AW-11217955271"');
       <div
         className={cn(
           style.background,
-          "flex w-full min-h-screen",
-          "sm:p-4 lg:p-8",
-          "gap-x-20",
-          "justify-center lg:justify-start"
+          'flex w-full min-h-screen',
+          'sm:p-4 lg:p-8',
+          'gap-x-20',
+          'justify-center lg:justify-start',
         )}
       >
         <div
           className={cn(
-            "flex w-full flex-col bg-white shadow rounded-2xl shrink-0",
-            "space-between"
+            'flex w-full flex-col bg-white shadow rounded-2xl shrink-0',
+            'space-between',
           )}
         >
           <Header />
@@ -71,9 +71,9 @@ gtag('config', 'AW-11217955271"');
           {loading && (
             <div
               className={cn(
-                "flex flex-col items-center w-full grow justify-center",
-                "px-6",
-                "md:px-[108px]"
+                'flex flex-col items-center w-full grow justify-center',
+                'px-6',
+                'md:px-[108px]',
               )}
             >
               <Loading type="area" />
@@ -97,7 +97,7 @@ gtag('config', 'AW-11217955271"');
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default SignIn;
+export default SignIn

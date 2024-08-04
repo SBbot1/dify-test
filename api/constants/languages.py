@@ -14,7 +14,8 @@ language_timezone_mapping = {
     'vi-VN': 'Asia/Ho_Chi_Minh',
     'ro-RO': 'Europe/Bucharest',
     'pl-PL': 'Europe/Warsaw',
-    'hi-IN': 'Asia/Kolkata'
+    'hi-IN': 'Asia/Kolkata',
+    'tr-TR': 'Europe/Istanbul',
 }
 
 languages = list(language_timezone_mapping.keys())

@@ -1,29 +1,29 @@
-import type { Viewport } from "next";
-import I18nServer from "./components/i18n-server";
-import BrowerInitor from "./components/browser-initor";
-import SentryInitor from "./components/sentry-initor";
-import Topbar from "./components/base/topbar";
-import { getLocaleOnServer } from "@/i18n/server";
-import "./styles/globals.css";
-import "./styles/markdown.scss";
+import type { Viewport } from 'next'
+import I18nServer from './components/i18n-server'
+import BrowerInitor from './components/browser-initor'
+import SentryInitor from './components/sentry-initor'
+import Topbar from './components/base/topbar'
+import { getLocaleOnServer } from '@/i18n/server'
+import './styles/globals.css'
+import './styles/markdown.scss'
 
 export const metadata = {
-  title: "Superbot",
-};
+  title: 'Superbot',
+}
 
 export const viewport: Viewport = {
-  width: "device-width",
+  width: 'device-width',
   initialScale: 1,
   maximumScale: 1,
-  viewportFit: "cover",
+  viewportFit: 'cover',
   userScalable: false,
-};
+}
 
 const LocaleLayout = ({ children }: { children: React.ReactNode }) => {
-  const locale = getLocaleOnServer();
+  const locale = getLocaleOnServer()
 
   return (
-    <html lang={locale ?? "en"} className="h-full">
+    <html lang={locale ?? 'en'} className="h-full" data-theme="light">
       <head>
         <meta name="theme-color" content="#FFFFFF" />
         <meta name="mobile-web-app-capable" content="yes" />
@@ -50,7 +50,7 @@ const LocaleLayout = ({ children }: { children: React.ReactNode }) => {
         </BrowerInitor>
       </body>
     </html>
-  );
-};
+  )
+}
 
-export default LocaleLayout;
+export default LocaleLayout

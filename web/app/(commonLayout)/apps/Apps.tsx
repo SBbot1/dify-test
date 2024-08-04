@@ -1,6 +1,7 @@
-"use client";
+'use client'
 
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { useRouter } from 'next/navigation'
 import useSWRInfinite from 'swr/infinite'
 import { useTranslation } from 'react-i18next'
 import { useDebounceFn } from 'ahooks'
@@ -30,58 +31,61 @@ const getKey = (
   previousPageData: AppListResponse,
   activeTab: string,
   tags: string[],
-  keywords: string
+  keywords: string,
 ) => {
   if (!pageIndex || previousPageData.has_more) {
     const params: any = {
-      url: "apps",
+      url: 'apps',
       params: { page: pageIndex + 1, limit: 30, name: keywords },
-    };
+    }
 
-    if (activeTab !== "all") params.params.mode = activeTab;
-    else delete params.params.mode;
+    if (activeTab !== 'all')
+      params.params.mode = activeTab
+    else delete params.params.mode
 
-    if (tags.length) params.params.tag_ids = tags;
+    if (tags.length)
+      params.params.tag_ids = tags
 
-    return params;
+    return params
   }
-  return null;
-};
+  return null
+}
 
 const Apps = () => {
-  const { t } = useTranslation();
-  const { isCurrentWorkspaceEditor } = useAppContext();
-  const showTagManagementModal = useTagStore((s) => s.showTagManagementModal);
+  const { t } = useTranslation()
+  const router = useRouter()
+  const { isCurrentWorkspaceEditor, isCurrentWorkspaceDatasetOperator } = useAppContext()
+  const showTagManagementModal = useTagStore(s => s.showTagManagementModal)
   const [activeTab, setActiveTab] = useTabSearchParams({
-    defaultTab: "all",
-  });
+    defaultTab: 'all',
+  })
   const {
-    query: { tagIDs = [], keywords = "" },
+    query: { tagIDs = [], keywords = '' },
     setQuery,
-  } = useAppsQueryState();
-  const [tagFilterValue, setTagFilterValue] = useState<string[]>(tagIDs);
-  const [searchKeywords, setSearchKeywords] = useState(keywords);
+  } = useAppsQueryState()
+  const [tagFilterValue, setTagFilterValue] = useState<string[]>(tagIDs)
+  const [searchKeywords, setSearchKeywords] = useState(keywords)
   const setKeywords = useCallback(
     (keywords: string) => {
-      setQuery((prev) => ({ ...prev, keywords }));
+      setQuery(prev => ({ ...prev, keywords }))
     },
-    [setQuery]
-  );
+    [setQuery],
+  )
   const setTagIDs = useCallback(
     (tagIDs: string[]) => {
-      setQuery((prev) => ({ ...prev, tagIDs }));
+      setQuery(prev => ({ ...prev, tagIDs }))
     },
-    [setQuery]
-  );
+    [setQuery],
+  )
 
   const { data, isLoading, setSize, mutate } = useSWRInfinite(
     (pageIndex: number, previousPageData: AppListResponse) =>
       getKey(pageIndex, previousPageData, activeTab, tagIDs, searchKeywords),
     fetchAppList,
-    { revalidateFirstPage: true }
-  );
+    { revalidateFirstPage: true },
+  )
 
-  const anchorRef = useRef<HTMLDivElement>(null);
+  const anchorRef = useRef<HTMLDivElement>(null)
   const options = [
     { value: 'all', text: t('app.types.all'), icon: <RiApps2Line className='w-[14px] h-[14px] mr-1' /> },
     { value: 'chat', text: t('app.types.chatbot'), icon: <RiMessage3Line className='w-[14px] h-[14px] mr-1' /> },
@@ -90,50 +94,55 @@ const Apps = () => {
   ]
 
   useEffect(() => {
-    document.title = `${t("common.menus.apps")} -  Superbot`;
-    if (localStorage.getItem(NEED_REFRESH_APP_LIST_KEY) === "1") {
-      localStorage.removeItem(NEED_REFRESH_APP_LIST_KEY);
-      mutate();
+    document.title = `${t('common.menus.apps')} -  Superbot`
+    if (localStorage.getItem(NEED_REFRESH_APP_LIST_KEY) === '1') {
+      localStorage.removeItem(NEED_REFRESH_APP_LIST_KEY)
+      mutate()
     }
-  }, []);
+  }, [])
 
-  const hasMore = data?.at(-1)?.has_more ?? true;
   useEffect(() => {
-    let observer: IntersectionObserver | undefined;
+    if (isCurrentWorkspaceDatasetOperator)
+      return router.replace('/datasets')
+  }, [isCurrentWorkspaceDatasetOperator])
+
+  const hasMore = data?.at(-1)?.has_more ?? true
+  useEffect(() => {
+    let observer: IntersectionObserver | undefined
     if (anchorRef.current) {
       observer = new IntersectionObserver(
         (entries) => {
           if (entries[0].isIntersecting && !isLoading && hasMore)
-            setSize((size: number) => size + 1);
+            setSize((size: number) => size + 1)
         },
-        { rootMargin: "100px" }
-      );
-      observer.observe(anchorRef.current);
+        { rootMargin: '100px' },
+      )
+      observer.observe(anchorRef.current)
     }
-    return () => observer?.disconnect();
-  }, [isLoading, setSize, anchorRef, mutate, hasMore]);
+    return () => observer?.disconnect()
+  }, [isLoading, setSize, anchorRef, mutate, hasMore])
 
   const { run: handleSearch } = useDebounceFn(
     () => {
-      setSearchKeywords(keywords);
+      setSearchKeywords(keywords)
     },
-    { wait: 500 }
-  );
+    { wait: 500 },
+  )
   const handleKeywordsChange = (value: string) => {
-    setKeywords(value);
-    handleSearch();
-  };
+    setKeywords(value)
+    handleSearch()
+  }
 
   const { run: handleTagsUpdate } = useDebounceFn(
     () => {
-      setTagIDs(tagFilterValue);
+      setTagIDs(tagFilterValue)
     },
-    { wait: 500 }
-  );
+    { wait: 500 },
+  )
   const handleTagsChange = (value: string[]) => {
-    setTagFilterValue(value);
-    handleTagsUpdate();
-  };
+    setTagFilterValue(value)
+    handleTagsUpdate()
+  }
 
   return (
     <>
@@ -161,18 +170,18 @@ const Apps = () => {
         {data?.map(({ data: apps }: any) =>
           apps.map((app: any) => (
             <AppCard key={app.id} app={app} onRefresh={mutate} />
-          ))
+          )),
         )}
         <CheckModal />
       </nav>
       <div ref={anchorRef} className="h-0">
-        {" "}
+        {' '}
       </div>
       {showTagManagementModal && (
         <TagManagementModal type="app" show={showTagManagementModal} />
       )}
     </>
-  );
-};
+  )
+}
 
-export default Apps;
+export default Apps

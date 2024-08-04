@@ -1,33 +1,33 @@
-import type { Var } from "./types";
-import { BlockEnum, VarType } from "./types";
-import StartNodeDefault from "./nodes/start/default";
-import AnswerDefault from "./nodes/answer/default";
-import LLMDefault from "./nodes/llm/default";
-import KnowledgeRetrievalDefault from "./nodes/knowledge-retrieval/default";
-import QuestionClassifierDefault from "./nodes/question-classifier/default";
-import IfElseDefault from "./nodes/if-else/default";
-import CodeDefault from "./nodes/code/default";
-import TemplateTransformDefault from "./nodes/template-transform/default";
-import HttpRequestDefault from "./nodes/http/default";
-import ParameterExtractorDefault from "./nodes/parameter-extractor/default";
-import ToolDefault from "./nodes/tool/default";
-import VariableAssignerDefault from "./nodes/variable-assigner/default";
-import EndNodeDefault from "./nodes/end/default";
-import IterationDefault from "./nodes/iteration/default";
+import type { Var } from './types'
+import { BlockEnum, VarType } from './types'
+import StartNodeDefault from './nodes/start/default'
+import AnswerDefault from './nodes/answer/default'
+import LLMDefault from './nodes/llm/default'
+import KnowledgeRetrievalDefault from './nodes/knowledge-retrieval/default'
+import QuestionClassifierDefault from './nodes/question-classifier/default'
+import IfElseDefault from './nodes/if-else/default'
+import CodeDefault from './nodes/code/default'
+import TemplateTransformDefault from './nodes/template-transform/default'
+import HttpRequestDefault from './nodes/http/default'
+import ParameterExtractorDefault from './nodes/parameter-extractor/default'
+import ToolDefault from './nodes/tool/default'
+import VariableAssignerDefault from './nodes/variable-assigner/default'
+import EndNodeDefault from './nodes/end/default'
+import IterationDefault from './nodes/iteration/default'
 
 type NodesExtraData = {
-  author: string;
-  about: string;
-  availablePrevNodes: BlockEnum[];
-  availableNextNodes: BlockEnum[];
-  getAvailablePrevNodes: (isChatMode: boolean) => BlockEnum[];
-  getAvailableNextNodes: (isChatMode: boolean) => BlockEnum[];
-  checkValid: any;
-};
+  author: string
+  about: string
+  availablePrevNodes: BlockEnum[]
+  availableNextNodes: BlockEnum[]
+  getAvailablePrevNodes: (isChatMode: boolean) => BlockEnum[]
+  getAvailableNextNodes: (isChatMode: boolean) => BlockEnum[]
+  checkValid: any
+}
 export const NODES_EXTRA_DATA: Record<BlockEnum, NodesExtraData> = {
   [BlockEnum.Start]: {
-    author: "Superbot",
-    about: "",
+    author: 'Superbot',
+    about: '',
     availablePrevNodes: [],
     availableNextNodes: [],
     getAvailablePrevNodes: StartNodeDefault.getAvailablePrevNodes,
@@ -35,8 +35,8 @@ export const NODES_EXTRA_DATA: Record<BlockEnum, NodesExtraData> = {
     checkValid: StartNodeDefault.checkValid,
   },
   [BlockEnum.End]: {
-    author: "Superbot",
-    about: "",
+    author: 'Superbot',
+    about: '',
     availablePrevNodes: [],
     availableNextNodes: [],
     getAvailablePrevNodes: EndNodeDefault.getAvailablePrevNodes,
@@ -44,8 +44,8 @@ export const NODES_EXTRA_DATA: Record<BlockEnum, NodesExtraData> = {
     checkValid: EndNodeDefault.checkValid,
   },
   [BlockEnum.Answer]: {
-    author: "Superbot",
-    about: "",
+    author: 'Superbot',
+    about: '',
     availablePrevNodes: [],
     availableNextNodes: [],
     getAvailablePrevNodes: AnswerDefault.getAvailablePrevNodes,
@@ -53,8 +53,8 @@ export const NODES_EXTRA_DATA: Record<BlockEnum, NodesExtraData> = {
     checkValid: AnswerDefault.checkValid,
   },
   [BlockEnum.LLM]: {
-    author: "Superbot",
-    about: "",
+    author: 'Superbot',
+    about: '',
     availablePrevNodes: [],
     availableNextNodes: [],
     getAvailablePrevNodes: LLMDefault.getAvailablePrevNodes,
@@ -62,8 +62,8 @@ export const NODES_EXTRA_DATA: Record<BlockEnum, NodesExtraData> = {
     checkValid: LLMDefault.checkValid,
   },
   [BlockEnum.KnowledgeRetrieval]: {
-    author: "Superbot",
-    about: "",
+    author: 'Superbot',
+    about: '',
     availablePrevNodes: [],
     availableNextNodes: [],
     getAvailablePrevNodes: KnowledgeRetrievalDefault.getAvailablePrevNodes,
@@ -71,8 +71,8 @@ export const NODES_EXTRA_DATA: Record<BlockEnum, NodesExtraData> = {
     checkValid: KnowledgeRetrievalDefault.checkValid,
   },
   [BlockEnum.IfElse]: {
-    author: "Superbot",
-    about: "",
+    author: 'Superbot',
+    about: '',
     availablePrevNodes: [],
     availableNextNodes: [],
     getAvailablePrevNodes: IfElseDefault.getAvailablePrevNodes,
@@ -80,8 +80,8 @@ export const NODES_EXTRA_DATA: Record<BlockEnum, NodesExtraData> = {
     checkValid: IfElseDefault.checkValid,
   },
   [BlockEnum.Iteration]: {
-    author: "Superbot",
-    about: "",
+    author: 'Superbot',
+    about: '',
     availablePrevNodes: [],
     availableNextNodes: [],
     getAvailablePrevNodes: IterationDefault.getAvailablePrevNodes,
@@ -89,8 +89,8 @@ export const NODES_EXTRA_DATA: Record<BlockEnum, NodesExtraData> = {
     checkValid: IterationDefault.checkValid,
   },
   [BlockEnum.Code]: {
-    author: "Superbot",
-    about: "",
+    author: 'Superbot',
+    about: '',
     availablePrevNodes: [],
     availableNextNodes: [],
     getAvailablePrevNodes: CodeDefault.getAvailablePrevNodes,
@@ -98,8 +98,8 @@ export const NODES_EXTRA_DATA: Record<BlockEnum, NodesExtraData> = {
     checkValid: CodeDefault.checkValid,
   },
   [BlockEnum.TemplateTransform]: {
-    author: "Superbot",
-    about: "",
+    author: 'Superbot',
+    about: '',
     availablePrevNodes: [],
     availableNextNodes: [],
     getAvailablePrevNodes: TemplateTransformDefault.getAvailablePrevNodes,
@@ -107,8 +107,8 @@ export const NODES_EXTRA_DATA: Record<BlockEnum, NodesExtraData> = {
     checkValid: TemplateTransformDefault.checkValid,
   },
   [BlockEnum.QuestionClassifier]: {
-    author: "Superbot",
-    about: "",
+    author: 'Superbot',
+    about: '',
     availablePrevNodes: [],
     availableNextNodes: [],
     getAvailablePrevNodes: QuestionClassifierDefault.getAvailablePrevNodes,
@@ -116,8 +116,8 @@ export const NODES_EXTRA_DATA: Record<BlockEnum, NodesExtraData> = {
     checkValid: QuestionClassifierDefault.checkValid,
   },
   [BlockEnum.HttpRequest]: {
-    author: "Superbot",
-    about: "",
+    author: 'Superbot',
+    about: '',
     availablePrevNodes: [],
     availableNextNodes: [],
     getAvailablePrevNodes: HttpRequestDefault.getAvailablePrevNodes,
@@ -125,8 +125,8 @@ export const NODES_EXTRA_DATA: Record<BlockEnum, NodesExtraData> = {
     checkValid: HttpRequestDefault.checkValid,
   },
   [BlockEnum.VariableAssigner]: {
-    author: "Superbot",
-    about: "",
+    author: 'Superbot',
+    about: '',
     availablePrevNodes: [],
     availableNextNodes: [],
     getAvailablePrevNodes: VariableAssignerDefault.getAvailablePrevNodes,
@@ -134,8 +134,8 @@ export const NODES_EXTRA_DATA: Record<BlockEnum, NodesExtraData> = {
     checkValid: VariableAssignerDefault.checkValid,
   },
   [BlockEnum.VariableAggregator]: {
-    author: "Superbot",
-    about: "",
+    author: 'Superbot',
+    about: '',
     availablePrevNodes: [],
     availableNextNodes: [],
     getAvailablePrevNodes: VariableAssignerDefault.getAvailablePrevNodes,
@@ -143,8 +143,8 @@ export const NODES_EXTRA_DATA: Record<BlockEnum, NodesExtraData> = {
     checkValid: VariableAssignerDefault.checkValid,
   },
   [BlockEnum.ParameterExtractor]: {
-    author: "Superbot",
-    about: "",
+    author: 'Superbot',
+    about: '',
     availablePrevNodes: [],
     availableNextNodes: [],
     getAvailablePrevNodes: ParameterExtractorDefault.getAvailablePrevNodes,
@@ -152,154 +152,154 @@ export const NODES_EXTRA_DATA: Record<BlockEnum, NodesExtraData> = {
     checkValid: ParameterExtractorDefault.checkValid,
   },
   [BlockEnum.Tool]: {
-    author: "Superbot",
-    about: "",
+    author: 'Superbot',
+    about: '',
     availablePrevNodes: [],
     availableNextNodes: [],
     getAvailablePrevNodes: ToolDefault.getAvailablePrevNodes,
     getAvailableNextNodes: ToolDefault.getAvailableNextNodes,
     checkValid: ToolDefault.checkValid,
   },
-};
+}
 
 export const ALL_CHAT_AVAILABLE_BLOCKS = Object.keys(NODES_EXTRA_DATA).filter(
-  (key) => key !== BlockEnum.End && key !== BlockEnum.Start
-) as BlockEnum[];
+  key => key !== BlockEnum.End && key !== BlockEnum.Start,
+) as BlockEnum[]
 export const ALL_COMPLETION_AVAILABLE_BLOCKS = Object.keys(
-  NODES_EXTRA_DATA
+  NODES_EXTRA_DATA,
 ).filter(
-  (key) => key !== BlockEnum.Answer && key !== BlockEnum.Start
-) as BlockEnum[];
+  key => key !== BlockEnum.Answer && key !== BlockEnum.Start,
+) as BlockEnum[]
 
 export const NODES_INITIAL_DATA = {
   [BlockEnum.Start]: {
     type: BlockEnum.Start,
-    title: "",
-    desc: "",
+    title: '',
+    desc: '',
     ...StartNodeDefault.defaultValue,
   },
   [BlockEnum.End]: {
     type: BlockEnum.End,
-    title: "",
-    desc: "",
+    title: '',
+    desc: '',
     ...EndNodeDefault.defaultValue,
   },
   [BlockEnum.Answer]: {
     type: BlockEnum.Answer,
-    title: "",
-    desc: "",
+    title: '',
+    desc: '',
     ...AnswerDefault.defaultValue,
   },
   [BlockEnum.LLM]: {
     type: BlockEnum.LLM,
-    title: "",
-    desc: "",
+    title: '',
+    desc: '',
     variables: [],
     ...LLMDefault.defaultValue,
   },
   [BlockEnum.KnowledgeRetrieval]: {
     type: BlockEnum.KnowledgeRetrieval,
-    title: "",
-    desc: "",
+    title: '',
+    desc: '',
     query_variable_selector: [],
     dataset_ids: [],
-    retrieval_mode: "single",
+    retrieval_mode: 'single',
     ...KnowledgeRetrievalDefault.defaultValue,
   },
   [BlockEnum.IfElse]: {
     type: BlockEnum.IfElse,
-    title: "",
-    desc: "",
+    title: '',
+    desc: '',
     ...IfElseDefault.defaultValue,
   },
   [BlockEnum.Iteration]: {
     type: BlockEnum.Iteration,
-    title: "",
-    desc: "",
+    title: '',
+    desc: '',
     ...IterationDefault.defaultValue,
   },
   [BlockEnum.Code]: {
     type: BlockEnum.Code,
-    title: "",
-    desc: "",
+    title: '',
+    desc: '',
     variables: [],
-    code_language: "python3",
-    code: "",
+    code_language: 'python3',
+    code: '',
     outputs: [],
     ...CodeDefault.defaultValue,
   },
   [BlockEnum.TemplateTransform]: {
     type: BlockEnum.TemplateTransform,
-    title: "",
-    desc: "",
+    title: '',
+    desc: '',
     variables: [],
-    template: "",
+    template: '',
     ...TemplateTransformDefault.defaultValue,
   },
   [BlockEnum.QuestionClassifier]: {
     type: BlockEnum.QuestionClassifier,
-    title: "",
-    desc: "",
+    title: '',
+    desc: '',
     query_variable_selector: [],
     topics: [],
     ...QuestionClassifierDefault.defaultValue,
   },
   [BlockEnum.HttpRequest]: {
     type: BlockEnum.HttpRequest,
-    title: "",
-    desc: "",
+    title: '',
+    desc: '',
     variables: [],
     ...HttpRequestDefault.defaultValue,
   },
   [BlockEnum.ParameterExtractor]: {
     type: BlockEnum.ParameterExtractor,
-    title: "",
-    desc: "",
+    title: '',
+    desc: '',
     variables: [],
     ...ParameterExtractorDefault.defaultValue,
   },
   [BlockEnum.VariableAssigner]: {
     type: BlockEnum.VariableAssigner,
-    title: "",
-    desc: "",
+    title: '',
+    desc: '',
     variables: [],
-    output_type: "",
+    output_type: '',
     ...VariableAssignerDefault.defaultValue,
   },
   [BlockEnum.VariableAggregator]: {
     type: BlockEnum.VariableAggregator,
-    title: "",
-    desc: "",
+    title: '',
+    desc: '',
     variables: [],
-    output_type: "",
+    output_type: '',
     ...VariableAssignerDefault.defaultValue,
   },
   [BlockEnum.Tool]: {
     type: BlockEnum.Tool,
-    title: "",
-    desc: "",
+    title: '',
+    desc: '',
     ...ToolDefault.defaultValue,
   },
-};
+}
 
-export const NODE_WIDTH = 240;
-export const X_OFFSET = 60;
-export const NODE_WIDTH_X_OFFSET = NODE_WIDTH + X_OFFSET;
-export const Y_OFFSET = 39;
-export const MAX_TREE_DEEPTH = 50;
-export const START_INITIAL_POSITION = { x: 80, y: 282 };
+export const NODE_WIDTH = 240
+export const X_OFFSET = 60
+export const NODE_WIDTH_X_OFFSET = NODE_WIDTH + X_OFFSET
+export const Y_OFFSET = 39
+export const MAX_TREE_DEEPTH = 50
+export const START_INITIAL_POSITION = { x: 80, y: 282 }
 export const AUTO_LAYOUT_OFFSET = {
   x: -42,
   y: 243,
-};
-export const ITERATION_NODE_Z_INDEX = 1;
-export const ITERATION_CHILDREN_Z_INDEX = 1002;
+}
+export const ITERATION_NODE_Z_INDEX = 1
+export const ITERATION_CHILDREN_Z_INDEX = 1002
 export const ITERATION_PADDING = {
   top: 85,
   right: 16,
   bottom: 20,
   left: 16,
-};
+}
 
 export const RETRIEVAL_OUTPUT_STRUCT = `{
   "content": "",
@@ -319,7 +319,7 @@ export const RETRIEVAL_OUTPUT_STRUCT = `{
     "segment_index_node_hash": "",
     "score": ""
   }
-}`;
+}`
 
 export const SUPPORT_OUTPUT_VARS_NODE = [
   BlockEnum.Start,
@@ -334,76 +334,81 @@ export const SUPPORT_OUTPUT_VARS_NODE = [
   BlockEnum.QuestionClassifier,
   BlockEnum.ParameterExtractor,
   BlockEnum.Iteration,
-];
+]
 
 export const LLM_OUTPUT_STRUCT: Var[] = [
   {
-    variable: "text",
+    variable: 'text',
     type: VarType.string,
   },
-];
+]
 
 export const KNOWLEDGE_RETRIEVAL_OUTPUT_STRUCT: Var[] = [
   {
-    variable: "result",
+    variable: 'result',
     type: VarType.arrayObject,
   },
-];
+]
 
 export const TEMPLATE_TRANSFORM_OUTPUT_STRUCT: Var[] = [
   {
-    variable: "output",
+    variable: 'output',
     type: VarType.string,
   },
-];
+]
 
 export const QUESTION_CLASSIFIER_OUTPUT_STRUCT = [
   {
-    variable: "class_name",
+    variable: 'class_name',
     type: VarType.string,
   },
-];
+]
 
 export const HTTP_REQUEST_OUTPUT_STRUCT: Var[] = [
   {
-    variable: "body",
+    variable: 'body',
     type: VarType.string,
   },
   {
-    variable: "status_code",
+    variable: 'status_code',
     type: VarType.number,
   },
   {
-    variable: "headers",
-    type: VarType.string,
+    variable: 'headers',
+    type: VarType.object,
   },
   {
-    variable: "files",
+    variable: 'files',
     type: VarType.arrayFile,
   },
-];
+]
 
 export const TOOL_OUTPUT_STRUCT: Var[] = [
   {
-    variable: "text",
+    variable: 'text',
     type: VarType.string,
   },
   {
-    variable: "files",
+    variable: 'files',
     type: VarType.arrayFile,
   },
-];
+  {
+    variable: 'json',
+    type: VarType.arrayObject,
+  },
+]
 
 export const PARAMETER_EXTRACTOR_COMMON_STRUCT: Var[] = [
   {
-    variable: "__is_success",
+    variable: '__is_success',
     type: VarType.number,
   },
   {
-    variable: "__reason",
+    variable: '__reason',
     type: VarType.string,
   },
-];
+]
 
-export const WORKFLOW_DATA_UPDATE = "WORKFLOW_DATA_UPDATE";
-export const CUSTOM_NODE = "custom";
+export const WORKFLOW_DATA_UPDATE = 'WORKFLOW_DATA_UPDATE'
+export const CUSTOM_NODE = 'custom'
+export const DSL_EXPORT_CHECK = 'DSL_EXPORT_CHECK'
